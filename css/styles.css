@@ -9,5 +9,6 @@
 } */
 
 .price{
+    display: inline-flex;
     float: right;
 }

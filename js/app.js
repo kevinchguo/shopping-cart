@@ -2,6 +2,19 @@ var data = [{product: "Finger Toothbrush", description: "A helping hand to a nic
 
 // console.log(data[0].product)
 
+var header = document.createElement('h1');
+header.id = "header";
+header.innerHTML = 'Shopping cart';
+console.log(header)
+document.body.appendChild(header);
+header.style.backgroundColor = 'orange'
+header.style.color = 'grey'
+
+var shoppingCart = document.createElement('div');
+shoppingCart.id = 'cartItems'
+shoppingCart.innerHTML = 'Cart'
+document.body.appendChild(shoppingCart);
+
 function addItems(arr) {
     for (var i = 0; i < arr.length; i++){
         var product = document.createElement('div');
@@ -25,7 +38,7 @@ addItems(data);
 
 
 var plusImg = document.getElementsByClassName('img')
-for(var i = 0; i<description.length; i++){
+for(var i = 0; i<plusImg.length; i++){
     plusImg[i].addEventListener('click', displayDescription);
 }
 
