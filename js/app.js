@@ -2,21 +2,32 @@ var data = [{product: "Finger Toothbrush", description: "A helping hand to a nic
 
 // console.log(data[0].product)
 
-var header = document.createElement('h1');
+var header = document.createElement('h1'); 
 header.id = "header";
 header.innerHTML = 'Shopping cart';
 console.log(header)
 document.body.appendChild(header);
 header.style.backgroundColor = 'orange'
-header.style.color = 'grey'
+header.style.color = '#B06900';
 
 var shoppingCart = document.createElement('div');
 shoppingCart.id = 'cartItems'
 shoppingCart.innerHTML = 'Cart'
 document.body.appendChild(shoppingCart);
 
+var cartImg = document.createElement('img')
+cartImg.classList = 'cart';
+cartImg.src = 'images/cart.svg';
+header.appendChild(cartImg);
+cartImg.style.cssFloat = 'left';
+
 function addItems(arr) {
     for (var i = 0; i < arr.length; i++){
+
+        // var itemImg = document.createElement('img')
+        // itemImg.className = 'image'
+        // product.src = ''
+
         var product = document.createElement('div');
         product.className = 'products';
         product.innerHTML = arr[i].product;
@@ -27,29 +38,37 @@ function addItems(arr) {
         description.innerHTML = arr[i].description;
         shoppingCart.appendChild(description);
 
-
         var price = document.createElement('div');
         price.className = 'price';
         price.innerHTML = '$' + arr[i].price;
-        shoppingCart.appendChild(price);
+        description.appendChild(price);
     }
 }
 addItems(data);
 
 
-var plusImg = document.getElementsByClassName('img')
-for(var i = 0; i<plusImg.length; i++){
-    plusImg[i].addEventListener('click', displayDescription);
-}
 
-function displayDescription() {
-    var showDescription = this.querySelectorAll('.description')[0];
-    if(showDescription.style.display === 'block'){
-        showDescription.style.display = 'none';
-    }else{
-        showDescription.style.display = 'none';
-    } 
+
+// function makePlus() {
+//     var plusImg = document.getElementsByClassName('div')
+//     plusImg.className = 'plusBtn'
+//  for(var i = 0; i<plusImg.length; i++){
+     
+//     plusImg[i].addEventListener('click', displayDescription);
+    
+//     }
+// }
+
+
+
+// function displayDescription() {
+//     var showDescription = this.querySelectorAll('.description')[0];
+//     if(showDescription.style.display === 'block'){
+//         showDescription.style.display = 'none';
+//     }else{
+//         showDescription.style.display = 'none';
+//     } 
     
 
-}
+// }
 
